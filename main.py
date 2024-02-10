@@ -38,9 +38,6 @@ def insert_mongo(json_str : str):
     if most_recent_doc is None or new_event["timestamp"] > most_recent_date:
         events.insert_one(new_event)
         print(new_event)
-        
-
-
 
 if __name__ == '__main__':
     main()
