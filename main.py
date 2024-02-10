@@ -7,16 +7,6 @@ MONGO_CS = 'mongodb://admin:admin@localhost:27017' #! environment variable
 MONGO_CLIENT = MongoClient(MONGO_CS)
 DB = MONGO_CLIENT.testdb
 
-def latest_timestamp():
-    events = DB.events
-    most_recent_doc = events.find_one({}, sort=[("timestamp", -1)])
-
-    if most_recent_doc is not None: 
-        return most_recent_doc["timestamp"]
-    return None
-
-TIMESTAMP = latest_timestamp()
-
 def main():
     #! enviroment variables change me !
     bootstrap_servers = 'localhost:9092'
@@ -49,5 +39,8 @@ def insert_mongo(json_str : str):
         events.insert_one(new_event)
         print(new_event)
         
+
+
+
 if __name__ == '__main__':
     main()
