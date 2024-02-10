@@ -3,6 +3,10 @@ from datetime import datetime
 from kafka import KafkaConsumer
 from pymongo import MongoClient 
 
+#todo: make the timestamp find only when starting up
+#todo: remove mongo insert func
+#todo: get cs from enviroment vars
+
 MONGO_CS = 'mongodb://admin:admin@localhost:27017' #! environment variable
 MONGO_CLIENT = MongoClient(MONGO_CS)
 DB = MONGO_CLIENT.testdb
@@ -11,11 +15,10 @@ def main():
     #! enviroment variables change me !
     bootstrap_servers = 'localhost:9092'
     kafka_topic = 'pyTest'
-    
-    consumer = KafkaConsumer(kafka_topic, bootstrap_servers=bootstrap_servers,
-                             auto_offset_reset='earliest')
-    
+
     try:
+        consumer = KafkaConsumer(kafka_topic, bootstrap_servers=bootstrap_servers,
+                             auto_offset_reset='earliest') 
         consumer.subscribe(['pyTest'])
 
         for message in consumer:
