@@ -24,8 +24,11 @@ def main():
         print(f"subscribed to {kafka_topic}")
 
         for message in consumer:
-            json_str = message.value.decode('utf-8')
-            new_event = json.loads(json_str)
+            try:
+                json_str = message.value.decode('utf-8')
+                new_event = json.loads(json_str)
+            except Exception:
+                continue
             new_event["timestamp"] = datetime.strptime(new_event["timestamp"] ,"%Y-%m-%d %H:%M:%S")
 
             if most_recent_doc is None or new_event["timestamp"] > most_recent_doc["timestamp"]:
