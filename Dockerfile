@@ -1,9 +1,10 @@
 FROM python:3.11.2
 
-ADD main.py .
+WORKDIR /app
 
-COPY requirements.txt .
+COPY requirements.txt ./
+COPY main.py ./
 
 RUN pip install -r requirements.txt
 
-CMD [ "python", "main.py" ]
+CMD [ "python" , "main.py" ]

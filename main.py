@@ -11,8 +11,8 @@ DB = MONGO_CLIENT.testdb
 
 def main():
     
-    bootstrap_servers = os.environ.get("BOOTSTRAP_SERVER") #'localhost:9092'
-    kafka_topic = os.environ.get("TOPIC") #'pyTest'
+    bootstrap_servers = os.environ.get("BOOTSTRAP_SERVER")
+    kafka_topic = os.environ.get("TOPIC")
 
     events = DB.events
     most_recent_doc = events.find_one({}, sort=[("timestamp", -1)])
@@ -34,7 +34,7 @@ def main():
                 most_recent_doc = new_event
                 print(new_event)
 
-    except KeyboardInterrupt:
+    except Exception:
         consumer.close()
 
 if __name__ == '__main__':
