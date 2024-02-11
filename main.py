@@ -5,12 +5,11 @@ from kafka import KafkaConsumer
 from pymongo import MongoClient 
 
 
-MONGO_CS = os.environ.get("MONGO_CS") #'mongodb://admin:admin@localhost:27017' 
+MONGO_CS = os.environ.get("MONGO_CS")
 MONGO_CLIENT = MongoClient(MONGO_CS)
 DB = MONGO_CLIENT.testdb
 
 def main():
-    
     bootstrap_servers = os.environ.get("BOOTSTRAP_SERVER")
     kafka_topic = os.environ.get("TOPIC")
 
