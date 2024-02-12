@@ -28,13 +28,15 @@ This project is a Kafka consumer written in Python using the kafka-python librar
 
     ```docker run -e BOOTSTRAP_SERVER=<kafka server> -e TOPIC=<kafka topic> -e MONGO_CS=<mongo connection string> python-consumer```
 
+    ### Environment Variables
+    
     BOOTSTRAP_SERVER: This environment variable specifies the bootstrap servers for your Kafka cluster. These are used by the Kafka consumer to initially establish connections with the Kafka brokers in the cluster
 
-    KAFKA_TOPIC: This environment variable specifies the Kafka topic that the Kafka consumer will subscribe to. The consumer will receive messages from this topic and process them accordingly.
+    TOPIC: This environment variable specifies the Kafka topic that the Kafka consumer will subscribe to. The consumer will receive messages from this topic and process them accordingly.
 
-    MONGODB_URI: This environment variable specifies the connection URI for your MongoDB database. It should include the protocol (e.g., mongodb://), hostname, port number, and any authentication credentials if required.
+    MONGO_CS: This environment variable specifies the connection URI for your MongoDB database. It should include the protocol (e.g., mongodb://), hostname, port number, and any authentication credentials if required.
 
 
-## Running without dokcer
+## Running without docker
 
 Alternatively, you can run the project locally , you would just need a way to load environment variables so the main.py file will recognize them , you can use any way you see fit.
