@@ -26,7 +26,7 @@ This project is a Kafka consumer written in Python using the kafka-python librar
 
 3. Run the image with the following environment variables
 
-    ```docker run -e BOOTSTRAP_SERVER=<kafka server> -e TOPIC=<kafka topic> -e MONGO_CS=<mongo connection string> python-consumer```
+    ```docker run -e BOOTSTRAP_SERVER=<kafka server> -e TOPIC=<kafka topic> -e KAFKA_GROUP_ID=<group id> -e MONGO_CS=<mongo connection string> -e MONGO_DB=<database name> -e MONGO_COLLECTION=<collection name> python-consumer```
 
     ### Environment Variables
     
@@ -34,7 +34,13 @@ This project is a Kafka consumer written in Python using the kafka-python librar
 
     TOPIC: This environment variable specifies the Kafka topic that the Kafka consumer will subscribe to. The consumer will receive messages from this topic and process them accordingly.
 
+    KAFKA_GROUP_ID: This environment variable specifies the Kafka group ID that will be used.
+
     MONGO_CS: This environment variable specifies the connection URI for your MongoDB database. It should include the protocol (e.g., mongodb://), hostname, port number, and any authentication credentials if required.
+
+    MONGO_DB: This environment variable specifies the database to connect to. 
+
+    MONGO_COLLECTION: This environment variable specifies the collection to pull data from.
 
 
 ## Running without docker
