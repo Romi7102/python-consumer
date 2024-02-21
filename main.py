@@ -7,6 +7,7 @@ from pymongo import MongoClient
 MONGO_CS = os.environ.get("MONGO_CS")
 MONGO_DB = os.environ.get("MONGO_DB")
 MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION")
+
 MONGO_CLIENT = MongoClient(MONGO_CS)
 DB = MONGO_CLIENT[MONGO_DB]
 EVENTS = DB[MONGO_COLLECTION]
