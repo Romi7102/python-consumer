@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY requirements.txt ./
 COPY main.py ./
+COPY config.py ./
+COPY config.yaml ./
 
 RUN pip install -r requirements.txt
 

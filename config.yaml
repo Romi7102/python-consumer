@@ -1,0 +1,21 @@
+BOOTSTRAP_SERVER: kafka1:19092
+TOPIC: pyTest
+KAFKA_GROUP_ID: 1
+
+MONGO_CS: mongodb://admin:admin@mongo:27017
+MONGO_DB: testdb
+MONGO_COLLECTION: events
+
+ENCODING: "utf-8"
+DATETIME_FORMAT: "%Y-%m-%d %H:%M:%S"
+
+# BOOTSTRAP_SERVER: localhost:9092
+# TOPIC: dev
+# KAFKA_GROUP_ID: 1
+
+# MONGO_CS: mongodb://admin:admin@localhost:27017
+# MONGO_DB: dev
+# MONGO_COLLECTION: events
+
+# ENCODING: "utf-8"
+# DATETIME_FORMAT: "%Y-%m-%d %H:%M:%S"
