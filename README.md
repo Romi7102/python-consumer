@@ -1,5 +1,5 @@
 # python-consumer
-This project is a Kafka consumer written in Python using the kafka-python library. It subscribes to a Kafka topic and inserts all JSON messages into a MongoDB database. Each JSON object must include a timestamp in "%Y-%m-%d %H:%M:%S" format.
+This project is a Kafka consumer written in Python using the kafka-python library. It subscribes to a Kafka topic and inserts all JSON messages into a MongoDB database.
 
 ## Table of Contents
 - [Installation](#installation)
